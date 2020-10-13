@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { MdMenu } from 'react-icons/md'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+import './App.css'
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      navbarToggleCount: 0,
+      shouldShowNavbar: false
+    }
+  }
+
+  toggleNavbarVisibility() {
+    const { navbarToggleCount, shouldShowNavbar } = this.state
+    this.setState({
+      navbarToggleCount: navbarToggleCount + 1,
+      shouldShowNavbar: !shouldShowNavbar
+    })
+  }
+
+  render() {
+    const { navbarToggleCount, shouldShowNavbar } = this.state
+    const containerCssClasses = `app-container${
+      shouldShowNavbar ? " visible-navbar" : ""}${
+      navbarToggleCount > 0 ? " has-once-toggled-navbar" : ""
+    }`
+
+    return (
+      <div className={containerCssClasses}>
+        <nav className="navbar-container">Navbar</nav>
+        <main
+          className="main-container"
+          onClick={() => this.toggleNavbarVisibility()}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <MdMenu />
+          Start
+        </main>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
