@@ -3,7 +3,12 @@ import { MdMenu } from 'react-icons/md'
 
 import './App.css'
 
-class App extends React.Component {
+export interface IAppState {
+  navbarToggleCount: number
+  shouldShowNavbar: boolean
+}
+
+class App extends React.Component<{}, IAppState> {
   constructor(props) {
     super(props)
 
