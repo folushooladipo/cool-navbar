@@ -1,7 +1,7 @@
 import React from 'react'
-import { MdMenu } from 'react-icons/md'
 
 import './App.css'
+import { MainContent , Navbar} from './components'
 
 export interface IAppState {
   navbarToggleCount: number
@@ -11,6 +11,8 @@ export interface IAppState {
 class App extends React.Component<{}, IAppState> {
   constructor(props) {
     super(props)
+
+    this.toggleNavbarVisibility = this.toggleNavbarVisibility.bind(this)
 
     this.state = {
       navbarToggleCount: 0,
@@ -34,15 +36,11 @@ class App extends React.Component<{}, IAppState> {
     }`
 
     return (
-      <div className={containerCssClasses}>
-        <nav className="navbar-container">Navbar</nav>
-        <main
-          className="main-container"
-          onClick={() => this.toggleNavbarVisibility()}
-        >
-          <MdMenu />
-          Start
-        </main>
+      <div className={ containerCssClasses }>
+        <Navbar />
+        <MainContent
+          toggleNavbarVisibility={ this.toggleNavbarVisibility }
+        />
       </div>
     )
   }
