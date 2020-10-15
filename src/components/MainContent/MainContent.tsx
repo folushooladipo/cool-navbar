@@ -3,12 +3,20 @@ import { MdMenu } from 'react-icons/md'
 
 export interface IMainContentProps {
   className?: string
+  currentRoute: KnownRoute
   toggleNavbarVisibility: () => void
+}
+
+export const MAP_OF_ROUTES: IRoutesMap = {
+  'start': 'Start',
+  'your-cart': 'Your Cart',
+  'favourites': 'Favourites',
+  'your-orders': 'Your Orders',
 }
 
 export default class MainContent extends React.Component<IMainContentProps> {
   render() {
-    const { className, toggleNavbarVisibility } = this.props
+    const { className, currentRoute, toggleNavbarVisibility } = this.props
     const containerCssClasses = className
       ? `main-container ${ className }`
       : "main-container"
@@ -19,7 +27,7 @@ export default class MainContent extends React.Component<IMainContentProps> {
         onClick={ () => toggleNavbarVisibility() }
       >
         <MdMenu />
-        Start
+        { MAP_OF_ROUTES[currentRoute] }
       </main>
     )
   }

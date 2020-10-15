@@ -1,0 +1,23 @@
+.navbar-container {
+  border: 1px solid red;
+  color: white;
+}
+
+.intra-app-nav-menu {
+  padding: 0;
+  list-style: none;
+}
+
+.intra-nav-item {
+  cursor: pointer;
+}
+
+.intra-nav-item.current-route {
+  border: 1px solid white;
+}
+
+.nav-divider {
+  background-color: #84818E;
+  width: 100%;
+  height: 1px;
+}

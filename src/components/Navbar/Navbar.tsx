@@ -1,10 +1,58 @@
-// TODO: list the items in the navbar.
 import React from 'react'
 
-export default class Navbar extends React.Component {
+import './Navbar.css'
+
+export interface INavbarProps {
+  currentRoute: KnownRoute
+  setCurrentRoute: (currentRoute: KnownRoute) => void
+}
+
+export const LIST_OF_ROUTES: IRouteData[] = [
+  { route: 'start', label: 'Start' },
+  { route: 'your-cart', label: 'Your Cart' },
+  { route: 'favourites', label: 'Favourites' },
+  { route: 'your-orders', label: 'Your Orders' },
+]
+
+export default class Navbar extends React.Component<INavbarProps> {
+  setRoute(route: KnownRoute) {
+    this.props.setCurrentRoute(route)
+  }
+
+  renderIntraNavMenu(): React.ReactNode {
+    const { currentRoute } = this.props
+    const menuItems = LIST_OF_ROUTES.map(({ route, label }) => (
+      <li
+        key={ `intra-nav-${ route }` }
+        className={
+          route === currentRoute
+            ? "intra-nav-item current-route"
+            : "intra-nav-item"
+        }
+        onClick={ () => this.setRoute(route) }
+      >
+        { label }
+      </li>
+    ))
+
+    return (
+      <ul className="intra-app-nav-menu">
+        { menuItems }
+      </ul>
+    )
+  }
+
   render() {
     return (
-      <nav className="navbar-container">Navbar</nav>
+      <nav className="navbar-container">
+        <div className="profile-container">Victor</div>
+        { this.renderIntraNavMenu() }
+        <div className="nav-divider"></div>
+        <div className="sign-out-container">
+          {/* TODO: Disable this before submitting your code. */}
+          <button>Sign Out</button>
+        </div>
+      </nav>
     )
   }
 }

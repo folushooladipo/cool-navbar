@@ -4,6 +4,7 @@ import './App.css'
 import { MainContent , Navbar} from './components'
 
 export interface IAppState {
+  currentRoute: KnownRoute
   navbarToggleCount: number
   shouldShowNavbar: boolean
 }
@@ -12,9 +13,11 @@ class App extends React.Component<{}, IAppState> {
   constructor(props) {
     super(props)
 
+    this.setCurrentRoute = this.setCurrentRoute.bind(this)
     this.toggleNavbarVisibility = this.toggleNavbarVisibility.bind(this)
 
     this.state = {
+      currentRoute: 'start',
       navbarToggleCount: 0,
       shouldShowNavbar: false
     }
@@ -28,8 +31,20 @@ class App extends React.Component<{}, IAppState> {
     })
   }
 
+  setCurrentRoute(currentRoute: KnownRoute) {
+    this.setState({
+      currentRoute,
+      navbarToggleCount: this.state.navbarToggleCount + 1,
+      shouldShowNavbar: false
+    })
+  }
+
   render() {
-    const { navbarToggleCount, shouldShowNavbar } = this.state
+    const {
+      currentRoute,
+      navbarToggleCount,
+      shouldShowNavbar
+    } = this.state
     const containerCssClasses = `app-container${
       shouldShowNavbar ? " visible-navbar" : ""}${
       navbarToggleCount > 0 ? " has-once-toggled-navbar" : ""
@@ -37,8 +52,12 @@ class App extends React.Component<{}, IAppState> {
 
     return (
       <div className={ containerCssClasses }>
-        <Navbar />
+        <Navbar
+          currentRoute={ currentRoute }
+          setCurrentRoute={ this.setCurrentRoute }
+        />
         <MainContent
+          currentRoute={ currentRoute }
           toggleNavbarVisibility={ this.toggleNavbarVisibility }
         />
       </div>
