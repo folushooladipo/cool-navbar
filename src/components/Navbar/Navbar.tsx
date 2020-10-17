@@ -50,8 +50,7 @@ export default class Navbar extends React.Component<INavbarProps> {
           { this.renderIntraNavMenu() }
           <div className="nav-divider" />
           <div className="sign-out-container">
-            {/* TODO: Disable this before submitting your code. */}
-            <button className="sign-out-btn">Sign Out</button>
+            <button disabled className="sign-out-btn">Sign Out</button>
           </div>
         </section>
       </nav>
