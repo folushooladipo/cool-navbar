@@ -3,21 +3,76 @@
   color: white;
 }
 
+.navbar-inner-wrapper {
+  margin: 27px;
+}
+
+.user-profile-container {
+  margin-top: 95px;
+  color: #FFFFFF;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 38px;
+}
+
+.user-profile-container,
+.intra-nav-item {
+  /* The designs say to use 30px, but that seems to much. Will use 20px instead. */
+  padding: 0 20px;
+}
+
 .intra-app-nav-menu {
+  margin-top: 57px;
   padding: 0;
   list-style: none;
 }
 
 .intra-nav-item {
+  margin-top: 15px;
+  padding: 12px 20px;
+  color: #FFFFFF;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 27px;
   cursor: pointer;
 }
 
+.intra-nav-item:hover {
+  background-color: #FC807433;
+}
+
 .intra-nav-item.current-route {
-  border: 1px solid white;
+  border-radius: 15.5px;
+  background-color: #FC807433;
+  color: #FC8074;
+  letter-spacing: -0.5px;
 }
 
 .nav-divider {
   background-color: #84818E;
   width: 100%;
   height: 1px;
+  margin-top: 15px;
+}
+
+.sign-out-container {
+  margin-top: 30px;
+}
+
+.sign-out-btn {
+  border: 0;
+  background-color: transparent;
+  width: 100%;
+  padding: 12px 20px;
+  color: #FFFFFF;
+  font-size: 20px;
+  text-align: left;
+  letter-spacing: 0;
+  line-height: 27px;
+  cursor: pointer;
+}
+
+.sign-out-btn:hover {
+  background-color: #FC807433;
 }

@@ -26,8 +26,8 @@ export default class Navbar extends React.Component<INavbarProps> {
         key={ `intra-nav-${ route }` }
         className={
           route === currentRoute
-            ? "intra-nav-item current-route"
-            : "intra-nav-item"
+            ? 'intra-nav-item current-route'
+            : 'intra-nav-item'
         }
         onClick={ () => this.setRoute(route) }
       >
@@ -45,13 +45,15 @@ export default class Navbar extends React.Component<INavbarProps> {
   render() {
     return (
       <nav className="navbar-container">
-        <div className="profile-container">Victor</div>
-        { this.renderIntraNavMenu() }
-        <div className="nav-divider"></div>
-        <div className="sign-out-container">
-          {/* TODO: Disable this before submitting your code. */}
-          <button>Sign Out</button>
-        </div>
+        <section className="navbar-inner-wrapper">
+          <div className="user-profile-container">Viktor</div>
+          { this.renderIntraNavMenu() }
+          <div className="nav-divider" />
+          <div className="sign-out-container">
+            {/* TODO: Disable this before submitting your code. */}
+            <button className="sign-out-btn">Sign Out</button>
+          </div>
+        </section>
       </nav>
     )
   }
