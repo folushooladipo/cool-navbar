@@ -45,21 +45,23 @@ class App extends React.Component<{}, IAppState> {
       navbarToggleCount,
       shouldShowNavbar
     } = this.state
-    const containerCssClasses = `app-container${
+    const innerContainerCssClasses = `inner-app-container${
       shouldShowNavbar ? ' visible-navbar' : ''}${
       navbarToggleCount > 0 ? ' has-once-toggled-navbar' : ''
     }`
 
     return (
-      <div className={ containerCssClasses }>
-        <Navbar
-          currentRoute={ currentRoute }
-          setCurrentRoute={ this.setCurrentRoute }
-        />
-        <MainContent
-          currentRoute={ currentRoute }
-          toggleNavbarVisibility={ this.toggleNavbarVisibility }
-        />
+      <div className="app-container">
+        <div className={ innerContainerCssClasses }>
+          <Navbar
+            currentRoute={ currentRoute }
+            setCurrentRoute={ this.setCurrentRoute }
+          />
+          <MainContent
+            currentRoute={ currentRoute }
+            toggleNavbarVisibility={ this.toggleNavbarVisibility }
+          />
+        </div>
       </div>
     )
   }
