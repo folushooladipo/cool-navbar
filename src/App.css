@@ -73,14 +73,14 @@ dimensions (e.g navbar-width) in variables?
   to {
     border-top-left-radius: 48px;
     margin: 40px 0 0 50%;
-    transform: rotate(-5deg);
+    transform: rotate(-7deg);
   }
 }
 
 .inner-app-container.visible-navbar .main-container {
   border-top-left-radius: 48px;
   margin: 40px 0 0 50%;
-  transform: rotate(-5deg);
+  transform: rotate(-7deg);
   animation: rotate-main-container-right .75s ease-out 0s 1;
 }
 
@@ -88,7 +88,7 @@ dimensions (e.g navbar-width) in variables?
   0% {
     border-top-left-radius: 48px;
     margin: 40px 0 0 50%;
-    transform: rotate(-5deg);
+    transform: rotate(-7deg);
   }
 
   75% {
