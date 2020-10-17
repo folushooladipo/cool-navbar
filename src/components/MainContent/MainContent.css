@@ -1,0 +1,12 @@
+.menu-opener {
+  display: flex;
+  align-items: center;
+  color: #9F9FA0;
+}
+
+.opener-text {
+  margin-left: 35px;
+  font-size: 24px;
+  letter-spacing: 5px;
+  line-height: 33px;
+}

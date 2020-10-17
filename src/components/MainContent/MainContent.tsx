@@ -1,5 +1,7 @@
 import React from 'react'
-import { MdMenu } from 'react-icons/md'
+import { FaBars } from 'react-icons/fa'
+
+import './MainContent.css'
 
 export interface IMainContentProps {
   className?: string
@@ -8,10 +10,10 @@ export interface IMainContentProps {
 }
 
 export const MAP_OF_ROUTES: IRoutesMap = {
-  'start': 'Start',
-  'your-cart': 'Your Cart',
-  'favourites': 'Favourites',
-  'your-orders': 'Your Orders',
+  'start': 'START',
+  'your-cart': 'YOUR CART',
+  'favourites': 'FAVOURITES',
+  'your-orders': 'YOUR ORDERS',
 }
 
 export default class MainContent extends React.Component<IMainContentProps> {
@@ -27,8 +29,10 @@ export default class MainContent extends React.Component<IMainContentProps> {
           className="menu-opener"
           onClick={ () => toggleNavbarVisibility() }
         >
-          <MdMenu />
-          { MAP_OF_ROUTES[currentRoute] }
+          <FaBars size="2em" />
+          <span className="opener-text">
+            { MAP_OF_ROUTES[currentRoute] }
+          </span>
         </div>
       </main>
     )
