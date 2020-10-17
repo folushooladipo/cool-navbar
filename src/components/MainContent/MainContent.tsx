@@ -19,15 +19,17 @@ export default class MainContent extends React.Component<IMainContentProps> {
     const { className, currentRoute, toggleNavbarVisibility } = this.props
     const containerCssClasses = className
       ? `main-container ${ className }`
-      : "main-container"
+      : 'main-container'
 
     return (
-      <main
-        className={ containerCssClasses }
-        onClick={ () => toggleNavbarVisibility() }
-      >
-        <MdMenu />
-        { MAP_OF_ROUTES[currentRoute] }
+      <main className={ containerCssClasses }>
+        <div
+          className='menu-opener'
+          onClick={ () => toggleNavbarVisibility() }
+        >
+          <MdMenu />
+          { MAP_OF_ROUTES[currentRoute] }
+        </div>
       </main>
     )
   }
