@@ -24,7 +24,7 @@ export default class MainContent extends React.Component<IMainContentProps> {
     return (
       <main className={ containerCssClasses }>
         <div
-          className='menu-opener'
+          className="menu-opener"
           onClick={ () => toggleNavbarVisibility() }
         >
           <MdMenu />

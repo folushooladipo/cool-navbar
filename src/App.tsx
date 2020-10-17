@@ -19,7 +19,7 @@ class App extends React.Component<{}, IAppState> {
     this.state = {
       currentRoute: 'start',
       navbarToggleCount: 0,
-      shouldShowNavbar: false
+      shouldShowNavbar: true
     }
   }
 
@@ -46,8 +46,8 @@ class App extends React.Component<{}, IAppState> {
       shouldShowNavbar
     } = this.state
     const containerCssClasses = `app-container${
-      shouldShowNavbar ? " visible-navbar" : ""}${
-      navbarToggleCount > 0 ? " has-once-toggled-navbar" : ""
+      shouldShowNavbar ? ' visible-navbar' : ''}${
+      navbarToggleCount > 0 ? ' has-once-toggled-navbar' : ''
     }`
 
     return (
