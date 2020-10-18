@@ -19,7 +19,7 @@ class App extends React.Component<{}, IAppState> {
     this.state = {
       currentRoute: 'start',
       navbarToggleCount: 0,
-      shouldShowNavbar: true
+      shouldShowNavbar: false
     }
   }
 
