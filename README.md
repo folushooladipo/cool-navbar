@@ -38,4 +38,4 @@ yarn start
 This project is licensed under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Author
-The author of this project is Folusho Oladipo. You can check out [my LinkedIn profile]() for more info and to get in touch.
+The author of this project is Folusho Oladipo. You can check out [my LinkedIn profile](https://www.linkedin.com/in/folushooladipo/) for more info and to get in touch.
