@@ -4,6 +4,10 @@
   color: #9F9FA0;
 }
 
+.opener-icon {
+  flex-shrink: 0;
+}
+
 .opener-text {
   margin-left: 35px;
   font-size: 24px;

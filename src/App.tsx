@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './App.css'
-import { MainContent , Navbar} from './components'
+import { MainContent, Navbar} from './components'
 
 export interface IAppState {
   currentRoute: KnownRoute

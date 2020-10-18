@@ -13,7 +13,7 @@ export const MAP_OF_ROUTES: IRoutesMap = {
   'start': 'START',
   'your-cart': 'YOUR CART',
   'favourites': 'FAVOURITES',
-  'your-orders': 'YOUR ORDERS',
+  'your-orders': 'YOUR ORDERS'
 }
 
 export default class MainContent extends React.Component<IMainContentProps> {
@@ -29,7 +29,7 @@ export default class MainContent extends React.Component<IMainContentProps> {
           className="menu-opener"
           onClick={ () => toggleNavbarVisibility() }
         >
-          <FaBars size="2em" />
+          <FaBars size="2em" className="opener-icon" />
           <span className="opener-text">
             { MAP_OF_ROUTES[currentRoute] }
           </span>

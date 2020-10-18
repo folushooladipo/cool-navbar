@@ -11,7 +11,7 @@ export const LIST_OF_ROUTES: IRouteData[] = [
   { route: 'start', label: 'Start' },
   { route: 'your-cart', label: 'Your Cart' },
   { route: 'favourites', label: 'Favourites' },
-  { route: 'your-orders', label: 'Your Orders' },
+  { route: 'your-orders', label: 'Your Orders' }
 ]
 
 export default class Navbar extends React.Component<INavbarProps> {

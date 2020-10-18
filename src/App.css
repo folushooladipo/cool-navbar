@@ -1,5 +1,5 @@
-/* TODO: maybe switch to using sass/stylus later so as to store colors and
-dimensions (e.g navbar-width) in variables?
+/* TODO: maybe switch to using Sass/Stylus later so as to store colors and
+dimensions (e.g navbar-width) in reusable variables?
 */
 .app-container {
   background-color: #FFFFFF;
@@ -7,14 +7,13 @@ dimensions (e.g navbar-width) in variables?
 
 .inner-app-container {
   position: relative;
-  display: flex;
   background-color: #1F1B33;
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
 }
 
-.inner-app-container.inner-app-container.visible-navbar {
+.inner-app-container.visible-navbar {
   border-top-left-radius: 48px;
 }
 
