@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+/* TODO: maybe switch to using Sass/Stylus later so as to store colors and
+dimensions (e.g navbar-width) in reusable variables?
+*/
+.app-container {
+  background-color: #FFFFFF;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.inner-app-container {
+  position: relative;
+  background-color: #1F1B33;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.inner-app-container.visible-navbar {
+  border-top-left-radius: 48px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-container {
+  position: absolute;
+  left: -50%;
+  width: 50%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes navbar-expand-right {
   from {
-    transform: rotate(0deg);
+    left: -50%;
   }
+
   to {
-    transform: rotate(360deg);
+    left: 0;
   }
+}
+
+.inner-app-container.visible-navbar .navbar-container {
+  left: 0;
+  animation: navbar-expand-right .75s ease-out 0s 1;
+}
+
+@keyframes navbar-fold-left {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: -50%;
+  }
+}
+
+.inner-app-container.has-once-toggled-navbar:not(.visible-navbar) .navbar-container {
+  left: -50%;
+  animation: navbar-fold-left .75s ease-out 0s 1;
+}
+
+.main-container {
+  flex-grow: 1;
+  background-color: #ffffff;
+  height: 100%;
+  padding: 43px 36px;
+  transform-origin: top left;
+  cursor: pointer;
+}
+
+@keyframes rotate-main-container-right {
+  from {
+    border-top-left-radius: 0;
+    margin: 0;
+    transform: rotate(0);
+  }
+
+  to {
+    border-top-left-radius: 48px;
+    margin: 40px 0 0 50%;
+    transform: rotate(-7deg);
+  }
+}
+
+.inner-app-container.visible-navbar .main-container {
+  border-top-left-radius: 48px;
+  margin: 40px 0 0 50%;
+  transform: rotate(-7deg);
+  animation: rotate-main-container-right .75s ease-out 0s 1;
+}
+
+@keyframes unrotate-main-container {
+  0% {
+    border-top-left-radius: 48px;
+    margin: 40px 0 0 50%;
+    transform: rotate(-7deg);
+  }
+
+  75% {
+    border-top-left-radius: 0;
+    margin: 0;
+    transform: rotate(0);
+  }
+}
+
+.inner-app-container.has-once-toggled-navbar:not(.visible-navbar) .main-container {
+  border-top-left-radius: 0;
+  margin-top: 0;
+  transform: rotate(0);
+  animation: unrotate-main-container .75s ease-out 0s 1;
 }
