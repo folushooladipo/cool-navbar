@@ -1,6 +1,8 @@
 # Welcome to the Cool Navbar
 This project is all about a very cool navbar. Enough talk, check it out below:
-[See the navbar](https://cool-navbar-staging.herokuapp.com/)
+<video src="https://vimeo.com/982062682" width="180" />
+
+[Watch the video](https://vimeo.com/982062682)
 
 ## Tech Stack
 The following technologies were used to build this app:
