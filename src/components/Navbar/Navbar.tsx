@@ -46,7 +46,7 @@ export default class Navbar extends React.Component<INavbarProps> {
     return (
       <nav className="navbar-container">
         <section className="navbar-inner-wrapper">
-          <div className="user-profile-container">Viktor</div>
+          <div className="user-profile-container">Folusho</div>
           { this.renderIntraNavMenu() }
           <div className="nav-divider" />
           <div className="sign-out-container">
