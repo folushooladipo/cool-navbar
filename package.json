@@ -1,5 +1,9 @@
 {
-  "name": "proxify-frontend-test",
+  "name": "cool-navbar",
+  "description": "Cool Navbar",
+  "engines": {
+    "node": "14.x"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
