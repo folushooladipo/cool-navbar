@@ -1,6 +1,5 @@
 # Welcome to the Cool Navbar
 This project is all about a very cool navbar. Enough talk, check it out below:
-<video src="https://vimeo.com/982062682" width="180" />
 
 [Watch the video](https://vimeo.com/982062682)
 
